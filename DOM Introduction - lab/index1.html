@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collect List Items</title>
+</head>
+<body>
+    <ul id="items">
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+    </ul>
+    <textarea id="result"></textarea>
+    <br>
+    <button onclick="extractText()">Extract text</button>
+    <script>
+        function extractText() {
+            //const items = document.getElementById('items').children;
+            const items = document.querySelector('#items li');
+            const result = [...items].map(e => e.textContent).join('\n');
+            //const result = [];
+
+            //for (const item of Array.from(items)) {
+              //  result.push(item.textContent);
+            //}
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>
